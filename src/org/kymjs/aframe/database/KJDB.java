@@ -22,13 +22,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.core.KJException;
 import org.kymjs.aframe.database.utils.KeyValue;
 import org.kymjs.aframe.database.utils.ManyToOne;
 import org.kymjs.aframe.database.utils.OneToMany;
 import org.kymjs.aframe.database.utils.TableInfo;
 import org.kymjs.aframe.ui.KJActivityManager;
+import org.kymjs.aframe.utils.LogUtils;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -325,8 +325,7 @@ public class KJDB {
                 cv.put(kv.getKey(), kv.getValue().toString());
             }
         } else {
-            KJLoger.debug(getClass().getName()
-                    + "insertContentValues: List<KeyValue> is empty or ContentValues is empty!");
+            LogUtils.d("insertContentValues: List<KeyValue> is empty or ContentValues is empty!");
         }
 
     }
@@ -407,8 +406,7 @@ public class KJDB {
                 try {
                     db.execSQL("DROP TABLE " + cursor.getString(0));
                 } catch (SQLException e) {
-                    KJLoger.debug(getClass().getName()
-                            + e.getMessage());
+                    LogUtils.d(e.getMessage());
                 }
             }
         }
@@ -423,8 +421,7 @@ public class KJDB {
             debugSql(sqlInfo.getSql());
             db.execSQL(sqlInfo.getSql(), sqlInfo.getBindArgsAsArray());
         } else {
-            KJLoger.debug(getClass().getName()
-                    + "sava error:sqlInfo is null");
+            LogUtils.d("sava error:sqlInfo is null");
         }
     }
 

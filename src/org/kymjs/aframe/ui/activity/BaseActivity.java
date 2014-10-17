@@ -15,9 +15,9 @@
  */
 package org.kymjs.aframe.ui.activity;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.ui.KJActivityManager;
 import org.kymjs.aframe.ui.ViewInject;
+import org.kymjs.aframe.utils.LogUtils;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -43,7 +43,7 @@ public abstract class BaseActivity extends KJFrameActivity {
     public static enum ActivityState {
         RESUME, PAUSE, STOP, DESTROY
     }
-
+    
     /**
      * Activity显示方向
      */
@@ -173,7 +173,7 @@ public abstract class BaseActivity extends KJFrameActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         aty = this;
-        KJLoger.state(this.getClass().getName(), "---------onCreat ");
+        LogUtils.d("---------onCreat ");
         switch (orientation) {
         case HORIZONTAL:
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -203,43 +203,41 @@ public abstract class BaseActivity extends KJFrameActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        KJLoger.state(this.getClass().getName(), "---------onStart ");
+        LogUtils.d("---------onStart ");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         activityState = ActivityState.RESUME;
-        KJLoger.state(this.getClass().getName(), "---------onResume ");
+        LogUtils.d("---------onResume ");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         activityState = ActivityState.PAUSE;
-        KJLoger.state(this.getClass().getName(), "---------onPause ");
+        LogUtils.d("---------onPause ");
     }
 
     @Override
     protected void onStop() {
         super.onResume();
         activityState = ActivityState.STOP;
-        KJLoger.state(this.getClass().getName(), "---------onStop ");
+        LogUtils.d("---------onStop ");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        KJLoger.state(this.getClass().getName(),
-                "---------onRestart ");
+        LogUtils.d("---------onRestart ");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         activityState = ActivityState.DESTROY;
-        KJLoger.state(this.getClass().getName(),
-                "---------onDestroy ");
+        LogUtils.d("---------onDestroy ");
     }
 
     @Override

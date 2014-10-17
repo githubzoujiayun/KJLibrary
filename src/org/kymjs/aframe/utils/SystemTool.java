@@ -22,7 +22,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.kymjs.aframe.KJConfig;
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.core.KJException;
 
 import android.app.Activity;
@@ -329,7 +328,7 @@ public final class SystemTool {
                     // pkgList 得到该进程下运行的包名
                     String[] pkgList = process.pkgList;
                     for (String pkgName : pkgList) {
-                        KJLoger.debug("======正在杀死包名：" + pkgName);
+                    	LogUtils.d("======正在杀死包名：" + pkgName);
                         try {
                             am.killBackgroundProcesses(pkgName);
                             count++;
@@ -340,8 +339,7 @@ public final class SystemTool {
                     }
                 }
             }
-        KJLoger.debug("清理了" + (getDeviceUsableMemory(cxt) - i)
-                + "M内存");
+        LogUtils.d("清理了" + (getDeviceUsableMemory(cxt) - i) + "M内存");
         return count;
     }
 }

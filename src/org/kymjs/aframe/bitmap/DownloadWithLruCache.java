@@ -20,11 +20,11 @@ import java.io.FileNotFoundException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.bitmap.utils.BitmapCreate;
 import org.kymjs.aframe.core.DiskCache;
 import org.kymjs.aframe.utils.CipherUtils;
 import org.kymjs.aframe.utils.FileUtils;
+import org.kymjs.aframe.utils.LogUtils;
 import org.kymjs.aframe.utils.StringUtils;
 
 import android.annotation.SuppressLint;
@@ -184,7 +184,7 @@ public class DownloadWithLruCache implements I_ImageLoder {
      */
     private void showLogIfOpen(String log) {
         if (config.isDEBUG) {
-            KJLoger.debugLog(getClass().getName(), log);
+            LogUtils.d(log);
         }
     }
 }

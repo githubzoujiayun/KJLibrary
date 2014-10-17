@@ -30,8 +30,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.utils.FileUtils;
+import org.kymjs.aframe.utils.LogUtils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -307,7 +307,7 @@ public final class DiskCache {
                     + URLEncoder.encode(fileName.replace("*", ""),
                             "UTF-8");
         } catch (final UnsupportedEncodingException e) {
-            KJLoger.debug(e.getMessage());
+            LogUtils.e(e.getMessage());
         }
         return null;
     }
@@ -394,7 +394,7 @@ public final class DiskCache {
 
     private void debug(String msg) {
         if (debug) {
-            KJLoger.debug(msg);
+            LogUtils.d(msg);
         }
     }
 }

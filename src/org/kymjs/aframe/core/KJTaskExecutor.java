@@ -30,7 +30,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.kymjs.aframe.KJLoger;
+import org.kymjs.aframe.utils.LogUtils;
 
 import android.os.Handler;
 import android.os.Message;
@@ -188,8 +188,7 @@ public abstract class KJTaskExecutor<Params, Progress, Result> {
                         postResult(get());
                     }
                 } catch (InterruptedException e) {
-                    KJLoger.debugLog(getClass().getName(),
-                            e.getMessage());
+                    LogUtils.e(e.getMessage());
                 } catch (ExecutionException e) {
                     throw new RuntimeException(
                             "An error occured while executing doInBackground()",

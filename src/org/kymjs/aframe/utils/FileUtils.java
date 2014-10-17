@@ -30,7 +30,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.bitmap.utils.BitmapCreate;
 import org.kymjs.aframe.bitmap.utils.BitmapHelper;
 import org.kymjs.aframe.bitmap.utils.BitmapOperateUtil;
@@ -39,14 +38,12 @@ import org.kymjs.aframe.core.KJException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.CursorLoader;
-import android.content.res.Resources.Theme;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 
 /**
  * 文件与流处理工具类<br>

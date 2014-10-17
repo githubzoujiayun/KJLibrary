@@ -15,7 +15,7 @@
  */
 package org.kymjs.aframe.ui.fragment;
 
-import org.kymjs.aframe.KJLoger;
+import org.kymjs.aframe.utils.LogUtils;
 
 import android.os.Bundle;
 
@@ -37,30 +37,30 @@ public abstract class BaseFragment extends KJFrameFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        KJLoger.state(this.getClass().getName(), "---------onCreateView ");
+        LogUtils.d("---------onCreateView ");
     }
 
     @Override
     public void onResume() {
-        KJLoger.state(this.getClass().getName(), "---------onResume ");
+        LogUtils.d("---------onResume ");
         super.onResume();
     }
 
     @Override
     public void onPause() {
-        KJLoger.state(this.getClass().getName(), "---------onPause ");
+        LogUtils.d("---------onPause ");
         super.onPause();
     }
 
     @Override
     public void onStop() {
-        KJLoger.state(this.getClass().getName(), "---------onStop ");
+        LogUtils.d("---------onStop ");
         super.onStop();
     }
 
     @Override
     public void onDestroyView() {
-        KJLoger.state(this.getClass().getName(), "---------onDestroy ");
+        LogUtils.d("---------onDestroy ");
         super.onDestroyView();
     }
 }

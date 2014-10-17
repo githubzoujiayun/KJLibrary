@@ -17,8 +17,8 @@ package org.kymjs.aframe.http.cache;
 
 import java.util.List;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.database.KJDB;
+import org.kymjs.aframe.utils.LogUtils;
 
 /**
  * Http请求中对字符串信息的缓存类，通过Lru算法，对数据做两级缓存（内存缓存、数据库缓存）<br>
@@ -153,7 +153,7 @@ public class HttpCache implements I_HttpCache {
 
     private void showDebug(String msg) {
         if (config.isDebug()) {
-            KJLoger.debugLog(getClass().getName(), "---" + msg);
+            LogUtils.d(msg);
         }
     }
 

@@ -16,6 +16,7 @@
 package org.kymjs.aframe;
 
 import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -99,12 +100,12 @@ public class CrashHandler implements UncaughtExceptionHandler {
 
     private void saveToSDCard(Throwable ex) throws Exception {
         File file = FileUtils.getSaveFile("KJLog",
-                SystemTool.getDataTime("yyyy-MM-dd-HH-mm-ss")
+                SystemTool.getDataTime("yyyy-MM-dd")
                         + FILE_NAME_SUFFIX);
         PrintWriter pw = new PrintWriter(new BufferedWriter(
                 new FileWriter(file)));
         // 导出发生异常的时间
-        pw.println(SystemTool.getDataTime("yyyy-MM-dd-HH-mm-ss"));
+        pw.println("---------- " + SystemTool.getDataTime("yyyy-MM-dd-HH-mm-ss") + " ----------");
         // 导出手机信息
         dumpPhoneInfo(pw);
 
@@ -124,29 +125,24 @@ public class CrashHandler implements UncaughtExceptionHandler {
         pw.print(pi.versionName);
         pw.print('_');
         pw.println(pi.versionCode);
-        pw.println();
 
         // android版本号
         pw.print("OS Version: ");
         pw.print(Build.VERSION.RELEASE);
         pw.print("_");
         pw.println(Build.VERSION.SDK_INT);
-        pw.println();
 
         // 手机制造商
         pw.print("Vendor: ");
         pw.println(Build.MANUFACTURER);
-        pw.println();
 
         // 手机型号
         pw.print("Model: ");
         pw.println(Build.MODEL);
-        pw.println();
 
         // cpu架构
         pw.print("CPU ABI: ");
         pw.println(Build.CPU_ABI);
-        pw.println();
     }
 
     /**

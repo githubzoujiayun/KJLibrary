@@ -18,12 +18,12 @@ package org.kymjs.aframe.bitmap;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.bitmap.utils.BitmapCreate;
 import org.kymjs.aframe.bitmap.utils.BitmapHelper;
 import org.kymjs.aframe.bitmap.utils.BitmapMemoryCache;
 import org.kymjs.aframe.core.KJTaskExecutor;
 import org.kymjs.aframe.utils.CipherUtils;
+import org.kymjs.aframe.utils.LogUtils;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -676,7 +676,7 @@ public class KJBitmap {
      */
     private void showLogIfOpen(String log) {
         if (config.isDEBUG) {
-            KJLoger.debugLog(getClass().getName(), log);
+            LogUtils.d(log);
         }
     }
 

@@ -15,9 +15,9 @@
  */
 package org.kymjs.aframe.http.cache;
 
-import org.kymjs.aframe.KJLoger;
 import org.kymjs.aframe.core.MemoryLruCache;
 import org.kymjs.aframe.utils.CipherUtils;
+import org.kymjs.aframe.utils.LogUtils;
 
 /**
  * 使用lru算法的JSON数据内存缓存池。仅内部使用，外界无法访问本类<br>
@@ -188,7 +188,7 @@ final class HttpMemoryCache implements I_HttpCache {
 
     private void showDebug(String msg) {
         if (config.isDebug()) {
-            KJLoger.debugLog(getClass().getName(), "---" + msg);
+            LogUtils.d(msg);
         }
     }
 }

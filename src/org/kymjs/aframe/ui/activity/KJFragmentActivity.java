@@ -54,8 +54,7 @@ public abstract class KJFragmentActivity extends BaseActivity {
     }
 
     /** 改变界面的fragment */
-    protected void changeFragment(int resView,
-            BaseFragment targetFragment) {
+    protected void changeFragment(int resView, BaseFragment targetFragment) {
         FragmentTransaction transaction = getFragmentManager()
                 .beginTransaction();
         transaction.replace(resView, targetFragment, targetFragment
